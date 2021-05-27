@@ -1,2 +1,2 @@
 console.log("test");
-alert("Test, press OK")
+alert("Test, press OK");
