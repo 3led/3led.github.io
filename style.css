@@ -1,394 +1,498 @@
 * {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+
+:root{
+  --primary-color:white; 
+  --secondary-color: black;
+} 
+
+.dark-theme{
+  --primary-color: black;
+  --secondary-color: #d3d3d3 ;
 }
   
-.header {
-  position: sticky;
-  top:0px;
-  width: 100%;
-  height: 120px;
-  display: block;
-  background-color: #0B0B0B;
-  z-index: 1;
-}
-
-.inner_header {
-  width: 1200px;
-  height: 100%;
-  display: block;
-  margin: 0 auto;
-}
-
-.logos {
-  height: 100%;
-  display:table;
-  float:left;
-}
-
-.logos h1 {
-  color: white;
-  height: 100%;
-  display: table-cell;
-  vertical-align: middle;
+.modal {
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid cyan;
+  border-radius: 10px;
+  z-index: 3;
+  background-color: var(--primary-color);
+  width: 500px;
+  max-width: 80%;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  font-size: 36px;
+  color: var(--secondary-color);
+  font-size: 40px;
 }
 
-.navigation {
-  float: right;
-  height: 100%;
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
 }
 
-.navigation a li {
-  transition: transform 0.4s;
-}
-
-.navigation a li:hover {
-  color: white;
-  transform: translateY(-3px) scale(1.05);
-}
-
-.navigation a {
-  height: 100%;
-  display: table;
-  float: left;
-  padding: 0px 17px;
-}
-
-#whiteh, #whiteg, #whitep, #whitem, #whiteah, #whiteagp {
-  color: white;
-}
-
-.navigation a li {
-  display: table-cell;
-  vertical-align: middle;
-  height: 60px;
-  color: #c5c5c5;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 22px;
-}
-
-.container {
-  background-color: white;
-  width:830px;
-  margin: 0px auto 40px auto;
-}
-
-body {
-  background-color: white; 
-  margin: 0px;
-  padding: 0px;
-}
-
-#ccheader {
-  display: block;
-  margin: 0px 0px:
-}
-
-.indent {
-  text-indent: 30px;
-}
-
-#gearpic1 {
-  display: block;
-  margin: 0px auto;
-  background-color:black;
-}
-
-#gearpic1center {
-  display: block;
-  margin: 0px auto;
-}
-
-.section1, .section2, .section3{
-  width: 830px;
-  height: auto;
-  display: block;
-  padding: 15px 0px;
-}
-
-.section1:after{
-  content: "";
-  display: block;
-  clear: both;
-}
-
-#alpinecat {
-  color: #222;
-  font-size: 18px;
-  line-height: 28px;
-  margin: 30px 0px;
-}
-
-#alpinecat li {
-  padding: 10px 0px;
-}
-
-#sizingtables {
-  display:block
-}
-
-#tright {
-  float:right;
-  margin: 25% 0px;
-}
-.whatisski {
-  width: 380px;
-  height: auto;
-  margin: 0px 10px 0px 0px;
-  float: left;
-}
-
-.pic1 {
-  display: block;
-  width: 440px;
-  margin: 59px 0px;
-  float: right;
-}
-
-#tright {
-  float:right;
-}
-
-#waxing {
-  float:right;
-  background-color:white;
-}
-
-#waxing:after{
-  content: "";
-  display: block;
-  clear: right;
-}
-
-#gearpics {
-  display:block;
-  height: auto;
-  margin: 35px 0px 80px 0px;
-  text-align:center;
-}
-
-#gearpicshead {
-  margin: 0px 0px;
-  text-align: center;
-}
-
-.xcgheader {
-  display:block;
-  background-color:black;
-  height:100%;
-  margin: 0px;
-  padding: 80px 0px 30px 0px;
-  font-size: 56px;
-  color: white;
-}
-
-.skicontainer, .bootcontainer, .polecontainer {
-  width: 830px;
-  background-color: black;
-  margin: 0px auto 0px;
+.modal-header {
+  padding: 10px 15px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
 }
 
-.skicontainer .box, .bootcontainer .box, .polecontainer .box {
-  position: relative;
-  width: 395px;
-  height: 395px;
-  background: red;
-  box-sizing: border-box;
-  display: inline-block;
-  margin: 10px;
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
-.skicontainer .box .imgbox, .bootcontainer .box .imgbox, .polecontainer .box .imgbox {
-  position: relative;
-  overflow: hidden;
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.65rem;
+  font-weight: bold;
+  
 }
 
-.skicontainer .box .imgbox img, .bootcontainer .box .imgbox img, .polecontainer .box .imgbox img {
-  object-fit: cover;
-  width:395px;
-  height: 395px;
-  transition: transform 1s;
+.modal-body {
+  padding: 10px 15px;
+  font-size: 18px;
 }
 
-.skicontainer .box:hover .imgbox img, .bootcontainer .box:hover .imgbox img, .polecontainer .box:hover .imgbox img {
-  transform: scale(1.1);
+#overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .6);
+  pointer-events: none;
+  transition: 200ms ease-in-out;
 }
 
-.skicontainer .box .description, .bootcontainer .box .description, .polecontainer .box .description {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(255, 255, 255, 0.8);
-  transform: scaleY(0);
-  transition: transform 1s;
+#overlay.active {
+  pointer-events: all;
+  opacity: 1;
 }
 
-.skicontainer .box:hover .description, .bootcontainer .box:hover .description, .polecontainer .box:hover .description {
-  transform: scaleY(1);
+.normalfont {
+  font-size: 16px;
+  border: none;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  background-color: var(--primary-color);
+  color: blue;
+  text-decoration: underline;
+  display: inline;
+  cursor: pointer;
 }
 
-.skicontainer .box .description .skicontent, .bootcontainer .box .description .bootcontent, .polecontainer .box .description .polecontent {
+.normalfont:hover {
+  background-color: yellow;
+  transition: 200ms ease-in-out;
+}
+
+  .header {
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    height: 120px;
+    display: block;
+    background-color: #0B0B0B;
+    z-index: 1;
+  }
+  
+  .inner_header {
+    width: 1200px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .logos {
+    height: 100%;
+    display:table;
+    float:left;
+  }
+  
+  .logos h1 {
+    color: white;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 36px;
+  }
+  
+  .navigation {
+    float: right;
+    height: 100%;
+  }
+  
+  .navigation a li {
+    transition: transform 0.4s;
+  }
+  
+  .navigation a li:hover {
+    color: white;
+    transform: translateY(-3px) scale(1.05);
+  }
+  
+  .navigation a {
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 17px;
+  }
+  
+  #whiteh, #whiteg, #whitep, #whitem, #whiteah, #whiteagp {
+    color: white;
+  }
+  
+  .navigation a li {
+    display: table-cell;
+    vertical-align: middle;
+    height: 60px;
+    color: #c5c5c5;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px;
+  }
+  
+  .container {
+    background-color: var(--primary-color);
+    width:830px;
+    margin: 0px auto 40px auto;
+  }
+  
+  body {
+    background-color: var(--primary-color); 
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  #ccheader {
+    display: block;
+    margin: 0px 0px;
+  }
+  
+  .indent {
+    text-indent: 30px;
+  }
+  
+  #gearpic1 {
+    display: block;
+    margin: 0px auto;
+    background-color:black;
+  }
+  
+  #gearpic1center {
+    display: block;
+    margin: 0px auto;
+  }
+  
+  .section1, .section2, .section3{
+    width: 830px;
+    height: auto;
+    display: block;
+    padding: 15px 0px;
+  }
+  
+  .section1:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  
+  #alpinecat {
+    color: var(--secondary-color);
+    font-size: 18px;
+    line-height: 28px;
+    margin: 30px 0px;
+  }
+  
+  #alpinecat li {
+    padding: 10px 0px;
+  }
+  
+  #sizingtables {
+    display:block
+  }
+  
+  #tright {
+    float:right;
+    margin: 25% 0px;
+  }
+  .whatisski {
+    width: 380px;
+    height: auto;
+    margin: 0px 10px 0px 0px;
+    float: left;
+  }
+  
+  .pic1 {
+    display: block;
+    width: 440px;
+    margin: 59px 0px;
+    float: right;
+  }
+  
+  #tright {
+    float:right;
+  }
+  
+  #waxing {
+    float:right;
+    background-color:white;
+  }
+  
+  #waxing:after{
+    content: "";
+    display: block;
+    clear: right;
+  }
+  
+  #gearpics {
+    display:block;
+    height: auto;
+    margin: 35px 0px 80px 0px;
+    text-align:center;
+  }
+  
+  #gearpicshead {
+    margin: 0px 0px;
+    text-align: center;
+  }
+  
+  .xcgheader {
+    display:block;
+    background-color:black;
+    height:100%;
+    margin: 0px;
+    padding: 80px 0px 30px 0px;
+    font-size: 56px;
+    color: white;
+  }
+  
+  .skicontainer, .bootcontainer, .polecontainer {
+    width: 830px;
+    background-color: black;
+    margin: 0px auto 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .skicontainer .box, .bootcontainer .box, .polecontainer .box {
+    position: relative;
+    width: 395px;
+    height: 395px;
+    background: red;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  .skicontainer .box .imgbox, .bootcontainer .box .imgbox, .polecontainer .box .imgbox {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skicontainer .box .imgbox img, .bootcontainer .box .imgbox img, .polecontainer .box .imgbox img {
+    object-fit: cover;
+    width:395px;
+    height: 395px;
+    transition: transform 1s;
+  }
+  
+  .skicontainer .box:hover .imgbox img, .bootcontainer .box:hover .imgbox img, .polecontainer .box:hover .imgbox img {
+    transform: scale(1.1);
+  }
+  
+  .skicontainer .box .description, .bootcontainer .box .description, .polecontainer .box .description {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    background: var(--primary-color);
+    transform: scaleY(0);
+    transition: transform 1s;
+  }
+  
+  .skicontainer .box:hover .description, .bootcontainer .box:hover .description, .polecontainer .box:hover .description {
+    transform: scaleY(1);
+  }
+  
+  .skicontainer .box .description .skicontent, .bootcontainer .box .description .bootcontent, .polecontainer .box .description .polecontent {
+    position: absolute;
+    top: 50%;
+    text-align:left;
+    transform: translateY(-50%);
+    padding: 15px;
+    color: var(--secondary-color);
+  }
+  
+  .skicontainer .box .description .skicontent h2, .bootcontainer .box .description .bootcontent h2, .polecontainer .box .description .polecontent h2 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 24px;
+    color:var(--secondary-color);
+  }
+  
+  .skicontainer .box .description .skicontent p, .bootcontainer .box .description .bootcontent p, .polecontainer .box .description .polecontent p{
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+    color: var(--secondary-color);
+  }
+  
+  #fischerimg {
+    object-position:50% 60%;
+  }
+  
+  #waxintro{
+    padding: 0px 13px 13px 0px;
+  }
+  
+  #classic{
+    padding: 0px 0px 13px 13px;
+  }
+  
+  #waxless {
+    padding: 13px 13px 0px 0px;
+  }
+  
+  #slate {
+    padding: 13px 0px 0px 13px
+  }
+  
+  #waxpic {
+    padding: 30px 0px;
+  }
+  
+  .content {
+    padding: 30px 0px;
+    clear: both;
+  }
+  
+  .whereintro {
+    margin:70px 0px;
+    text-align: left;
+    font-size:48px;
+    color:var(--secondary-color)
+  }
+  
+  .placestitle {
+    font-size: 45px;
+    text-align:center;
+    margin:0px;
+    padding: 0px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    border-bottom: 3px solid;
+    background-color:var(--primary-color);
+    color:var(--secondary-color);
+  }
+  
+  .placebox{
+    width: 830px;
+    height: auto;
+    margin:100px 0px;
+  }
+  
+  .placebox .placepic {
+    display:block;
+    transition: transform 1s;
+  }
+  
+  .placepic .fullwidth {
+   width: 100vw;
+   position: relative;
+   margin-left: -50vw;
+   height: 400px;
+   object-fit:cover;
+   left: 50%;
+   margin-top: 50px;
+   transition: all 0.4s;
+   opacity: 0.8;
+   transform: scale(1.02);
+  }
+  
+  .placepic:hover .fullwidth {
+    opacity:1;
+    transform: scale(1);
+  }
+  
+  .objectpos {
+    object-position:50% 75%;
+  }
+  
+  .objectpos2 {
+    object-position: 50% 80%;
+  }
+  
+  .objectpos3 {
+    object-position: 50% 20%;
+  }
+  
+  #contactlinks{
+    height: 1000px;
+  }
+  
+  #mail {
+    background-color: red;
+    vertical-align: middle;
+  }
+  
+  h1 {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color:var(--secondary-color);
+    font-size: 40px;
+    text-align: center;
+    margin: 40 0 40px;
+  }
+  
+  h2 {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: var(--secondary-color);
+    font-size: 36px;
+    text-align: left;
+    padding: 0px 0px 15px 0px;
+  }
+  
+  h3 {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color:var(--secondary-color);
+    font-size: 32px;
+    text-align: left;
+  }
+  
+  p {
+    color: var(--secondary-color);
+    font-size: 18px;
+    line-height: 28px;
+  }
+  
+  a {
+    color:blue;
+    padding: 0px 10px;
+    font-size: 24px;
+  }
+  
+  #external {
+    margin: 40px 0px;
+  }
+
+#icon {
+  width: 60px;
+  cursor: pointer;
+  margin: 0;
   position: absolute;
   top: 50%;
-  text-align:left;
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  padding: 15px;
-  color: black;
-}
-
-.skicontainer .box .description .skicontent h2, .bootcontainer .box .description .bootcontent h2, .polecontainer .box .description .polecontent h2 {
-  margin: 0px;
-  padding: 0px;
-  font-size: 24px;
-  color: black;
-}
-
-.skicontainer .box .description .skicontent p, .bootcontainer .box .description .bootcontent p, .polecontainer .box .description .polecontent p{
-  margin: 0px;
-  padding: 0px;
-  font-size: 18px;
-  color: black;
-}
-
-#fischerimg {
-  object-position:50% 60%;
-}
-
-#waxintro{
-  padding: 0px 13px 13px 0px;
-}
-
-#classic{
-  padding: 0px 0px 13px 13px;
-}
-
-#waxless {
-  padding: 13px 13px 0px 0px;
-}
-
-#slate {
-  padding: 13px 0px 0px 13px
-}
-
-#waxpic {
-  padding: 30px 0px;
-}
-
-.content {
-  padding: 30px 0px;
-  clear: both;
-}
-
-.whereintro {
-  margin:70px 0px;
-  text-align: left;
-  font-size:48px;
-}
-
-.placestitle {
-  font-size: 45px;
-  text-align:center;
-  margin:0px;
-  padding: 0px;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  border-bottom: 3px solid;
-  background-color: #FAFEFE;
-}
-
-.placebox{
-  width: 830px;
-  height: auto;
-  margin:100px 0px;
-}
-
-.placebox .placepic {
-  display:block;
-  transition: transform 1s;
-}
-
-.placepic .fullwidth {
- width: 100vw;
- position: relative;
- margin-left: -50vw;
- height: 400px;
- object-fit:cover;
- left: 50%;
- margin-top: 50px;
- transition: all 0.4s;
- opacity: 0.8;
- transform: scale(1.02);
-}
-
-.placepic:hover .fullwidth {
-  opacity:1;
-  transform: scale(1);
-}
-
-.objectpos {
-  object-position:50% 75%;
-}
-
-.objectpos2 {
-  object-position: 50% 80%;
-}
-
-.objectpos3 {
-  object-position: 50% 20%;
-}
-
-#contactlinks{
-  height: 1000px;
-}
-
-#mail {
-  background-color: red;
-  vertical-align: middle;
-}
-
-h1 {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  color: black;
-  font-size: 40px;
-  text-align: center;
-  margin: 40 0 40px;
-}
-
-h2 {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  color: black;
-  font-size: 36px;
-  text-align: left;
-  padding: 0px 0px 15px 0px;
-}
-
-h3 {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  color: black;
-  font-size: 32px;
-  text-align: left;
-}
-
-p {
-  color: #222;
-  font-size: 18px;
-  line-height: 28px;
-}
-
-a {
-  color:blue;
-  padding: 0px 10px;
-  font-size: 24px;
-}
-
-#external {
-  margin: 40px 0px;
 }
