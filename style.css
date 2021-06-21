@@ -10,6 +10,44 @@
   --secondary-color: black;
 } 
 
+form {
+  margin: 0 auto;
+  width: 800px;
+  padding: 1em;
+  border: 1px solid var(--secondary-color);
+  border-radius: 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top:1em;
+}
+
+label {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+  color: var(--secondary-color);
+}
+
+input, textarea {
+  font: 1em sans-serif;
+}
+
+textarea {
+  vertical-align: top;
+  height: 5em;
+}
+
+.button {
+  padding-left: 90px;
+}
+
 .dark-theme{
   --primary-color: black;
   --secondary-color: #d3d3d3 ;
@@ -95,6 +133,10 @@
 .normalfont:hover {
   background-color: yellow;
   transition: 200ms ease-in-out;
+}
+
+#misclink {
+  font-size: 18px;
 }
 
   .header {
@@ -388,7 +430,7 @@
   }
   
   .placestitle {
-    font-size: 45px;
+    font-size: 32px;
     text-align:center;
     margin:0px;
     padding: 0px;
@@ -438,16 +480,16 @@
   .objectpos3 {
     object-position: 50% 20%;
   }
+
+  .inline {
+    display: inline;
+  }
   
   #contactlinks{
     height: 1000px;
   }
   
-  #mail {
-    background-color: red;
-    vertical-align: middle;
-  }
-  
+
   h1 {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     color:var(--secondary-color);
@@ -476,7 +518,7 @@
     font-size: 18px;
     line-height: 28px;
   }
-  
+
   a {
     color:blue;
     padding: 0px 10px;
