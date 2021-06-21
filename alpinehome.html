@@ -16,10 +16,11 @@
       
       <ul class="navigation">
         <a href="index.html"><li>Home</li></a>
-        <a href="XC_Gear.html"><li>Cross Country Gear</li></a>
+        <a href="XC_Gear.html"><li>XC Gear</li></a>
         <a href="Places_to_XC_Ski.html"><li>Places to Ski</li></a>
         <a href="alpinehome.html"><li id="whiteah"><strong>Alpine Home</strong></li></a>
         <a href="Places_to_A_Ski_and_gear.html"><li>Alpine Gear & Places</li></a>
+        <a href="misc.html"><li>Misc Info</li></a>
         <img src = "https://icones.pro/wp-content/uploads/2021/02/icone-de-la-lune-grise.png" id = "icon">
       </ul>
     </div>
@@ -32,7 +33,21 @@
   <div class="section1">
   <div class="whatisski">
   
-  <p class="indent"> Alpine Skiing refers to the type of skiing where skiers get transported to the top of a mountain and ski down it. 
+  <p class="indent"> <div data-modal-target="#modal" class = "normalfont">Alpine Skiing</div>
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="title">Alpine Skiing Facts</div>
+        <button data-close-button class="close-button">close</button>
+      </div>
+      <div class="modal-body">
+        Did you know? Alpine skiing has been around since the 1850s, legend 
+        says that Norwegian Sondre Norheim popularized skis with curvy sides 
+        and binds made of willow. It first popped up in the Winter Olympics
+        in 1936 when Franz Pfnur became the first person to win a golden medal.
+      </div>
+    </div>
+    <div id="overlay"></div>
+  <p class = "inline">refers to the type of skiing where skiers get transported to the top of a mountain and ski down it. 
   Alpine Skiers will usually ski at a resort that has chairlifts to get them to the top of a mountain very fast, and to use their 
   groomed trails and artificial snow. “Off-Piste” skiing is another form of alpine skiing that skiers refer to when they use snowmobiles, 
   helicopters, or even snowcats to travel to skiing terrain that doesn’t have groomed trails. 
@@ -60,7 +75,35 @@
   
   <img src="https://i.cbc.ca/1.5375095.1574868443!/fileImage/httpImage/aptopix-finland-alpine-skiing-world-cup.jpg" width="100%">
   </div>
+
+  <h2>Contact Form</h2>
+
+  <form action="mailto:delbert3luo@gmail.com" method="post">
+    <ul>
+      <li>
+        <label>Name:</label>
+        <input type="text" id="name" name="user_name">
+      </li>
+      <li>
+        <label>Email:</label>
+        <input type="email" id="mail" name="user_email">
+      </li>
+      <li>
+        <label>Message:</label>
+        <textarea id="msg" name="user_message">Enter your message here.</textarea>
+      </li>
+      <li class="button">
+        <button type="submit">Click to send</button>
+      </li>
+    </ul>
+  </form>
+
+
+
+
+
   </div>
+<script src="script.js"></script>
 <script src="darklight.js"></script> 
 </body>
     
