@@ -1,3 +1,7 @@
+// Computer Science 30 Major Project, Advanced Web Design - Delbert Luo
+// This file allows the website to have openable/closable popups
+
+
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
@@ -24,12 +28,14 @@ closeModalButtons.forEach(button => {
 })
 
 function openModal(modal) {
+  // If the modal is off turn it on
   if (modal == null) return
   modal.classList.add('active')
   overlay.classList.add('active')
 }
 
 function closeModal(modal) {
+  // If the modal is on close it 
   if (modal == null) return
   modal.classList.remove('active')
   overlay.classList.remove('active')
