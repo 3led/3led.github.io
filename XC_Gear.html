@@ -17,10 +17,11 @@
       
       <ul class="navigation">
         <a href="index.html"><li>Home</li></a>
-        <a href="XC_Gear.html"><li id="whiteg"><strong>Cross Country Gear</strong></li></a>
+        <a href="XC_Gear.html"><li id="whiteg"><strong>XC Gear</strong></li></a>
         <a href="Places_to_XC_Ski.html"><li>Places to Ski</li></a>
         <a href="alpinehome.html"><li>Alpine Home</li></a>
         <a href="Places_to_A_Ski_and_gear.html"><li>Alpine Gear & Places</li></a>
+        <a href="misc.html"><li>Misc Info</li></a>
         <img src = "https://icones.pro/wp-content/uploads/2021/02/icone-de-la-lune-grise.png" id = "icon">
       </ul>
     </div>
@@ -33,7 +34,39 @@
       <div class="section1">
         
   <h2>What Gear is Needed to Cross Country Ski?</h2>
-        <p class="indent">Generally speaking, <strong>cross-country skiing</strong> requires skis, special ski boots, and poles. Cross country skis are long and narrow, unlike short and wide alpine skis, although there are <em>Backcountry</em> skis (also known as Touring Skis) which are long , wide, and developed to keep skiers floating on the snow where there are no tracks set. You must also have special boots because they allow you to "bind" your foot to the ski by attaching the boot to a specialized binding. However, you must be careful because there are many different binding systems, and most boots are <em>not compatible</em> with another binding system other than the one it was designed for. The most common binding systems are <strong>New Nordic Norm (NNN)</strong> and <strong>Pilot Salomon Nordic System (SNS Pilot)</strong>. Make sure you never mix these up!</p>
+        <p class="indent">Generally speaking, <strong>cross-country skiing</strong>
+           requires skis, special ski boots, and poles. Cross country skis are long 
+           and narrow, unlike short and wide alpine skis, although there are <em>Backcountry</em> 
+           skis (also known as Touring Skis) which are long , wide, and developed to keep skiers 
+           floating on the snow where there are no tracks set. You must also have special boots because
+           they allow you to "bind" your foot to the ski by attaching the boot to a specialized binding.
+           However, you must be careful because there are many different binding systems, and most boots
+           are <em>not compatible</em> with another binding system other than the one it was designed for.
+           The most common binding systems are <div data-modal-target="#modal" class = "normalfont">New Nordic Norm (NNN)</div>
+           <div class="modal" id="modal">
+            <div class="modal-header">
+              <div class="title">New Nordic Norm (NNN)</div>
+              <button data-close-button class="close-button">close</button>
+            </div>
+            <div class="modal-body">
+              NNN ski boots have two channels that line up with corresponding ridges on the NNN bindings. They are <strong>not</strong> 
+              compatible with the SNS system
+            </div>
+          </div>
+          <div id="overlay"></div> 
+              <p class ="inline">and</p>
+           <div data-modal-target="#modal" class ="normalfont">Pilot Salomon Nordic System (SNS Pilot)</div>
+           <div class="modal" id="modal">
+            <div class="modal-header">
+              <div class="title">Pilot Salomon Nordic System (SNS Pilot)</div>
+              <button data-close-button class="close-button">close</button>
+            </div>
+            <div class="modal-body">
+              SNS ski boots have one channel that corresponds with one ridge on SNS bindings. They are <strong>not</strong> compatible wth the NNN system
+            </div>
+          </div>
+          <div id="overlay"></div>
+           <p class= "inline">. Make sure you never mix these up!</p>
         
       </div>
     </div>
@@ -44,7 +77,7 @@
 
   <div class="section2">
   <h2>Gear Fitting</h3>
-    <p class="indent">Most, if not all <strong>cross-country skis</strong> are now built based on a weight range so that they can improve your performance. Sometimes the height and skill level will also be taken into consideration when selecting a ski. More experienced skiers may choose a <strong>longer</strong> ski because it offers more glide and they are confident with their maneuverability on the skis, while it is optimal for beginners skiers to start with a <strong>shorter</strong> ski. Poles are fitted to a person based on their height.<em>As a general rule of thumb</em>, classic poles should be approximately <strong>80% to 85%</strong> of your body height which is usually between the armpit and the top of the shoulders. Skating poles should be roughly between your chin and your nose, although it may be easier for beginners to start by using a slightly shorter pole. When purchasing skis and poles, remember that they are measured in <strong>centimeters</strong>, while boots are measured much like shoes but often use <strong>European</strong> shoe sizing to increase accuracy and consistency. You can check online for what ski sizes you should use for your height!</p>
+    <p class="indent">Most, if not all <strong>cross-country skis</strong> are now built based on a weight range so that they can improve your performance. Sometimes the height and skill level will also be taken into consideration when selecting a ski. More experienced skiers may choose a <strong>longer</strong> ski because it offers more glide and they are confident with their maneuverability on the skis, while it is optimal for beginners skiers to start with a <strong>shorter</strong> ski. Poles are fitted to a person based on their height. <em>As a general rule of thumb</em>, classic poles should be approximately <strong>80% to 85%</strong> of your body height which is usually between the armpit and the top of the shoulders. Skating poles should be roughly between your chin and your nose, although it may be easier for beginners to start by using a slightly shorter pole. When purchasing skis and poles, remember that they are measured in <strong>centimeters</strong>, while boots are measured much like shoes but often use <strong>European</strong> shoe sizing to increase accuracy and consistency. You can check online for what ski sizes you should use for your height!</p>
    </div>
     
  <div id="skiCare">
@@ -84,8 +117,7 @@
     </div>
   
     <h1 class="xcgheader">Skis</h1>
-    
-    <div class="imggallery">
+  
     
     <div class="skicontainer">
       
@@ -245,7 +277,37 @@
     </div>
       </div>
       </div>
-        
+      <h2>Contact Form</h2>
+
+      <form action="mailto:delbert3luo@gmail.com" method="post">
+        <ul>
+          <li>
+            <label>Name:</label>
+            <input type="text" id="name" name="user_name">
+          </li>
+          <li>
+            <label>Email:</label>
+            <input type="email" id="mail" name="user_email">
+          </li>
+          <li>
+            <label>Message:</label>
+            <textarea id="msg" name="user_message">Enter your message here.</textarea>
+          </li>
+          <li class="button">
+            <button type="submit">Click to send</button>
+          </li>
+        </ul>
+      </form>
+
+
+
+
+
+
+
+
+      </div>
+      <script src="script.js"></script> 
       <script src="darklight.js"></script>        
 </body>
     
